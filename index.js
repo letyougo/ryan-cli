@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var program = require('commander')
 var co = require('co');
 var prompt = require('co-prompt');
@@ -77,13 +78,13 @@ function createProject(name,type) {
     log('复制'+type+'项目原文件成功!')
 
     cd(name)
-    log('设置淘宝镜像----npm config set registry http://registry.cnpmjs.org')
-    exec('npm config set registry http://registry.cnpmjs.org')
+    log('设置淘宝镜像----npm config set registry http://registry.npm.taobao.org')
+    exec('npm config set registry http://registry.npm.taobao.org')
     log('安装模块---npm install')
     log('安装模块时间较长，请耐心等候，您也可以CRTL+C停止安装，手动npm install安装')
     log('安装模块中....')
     exec('npm install')
     log('使用npm start或者npm run dev测试项目')
 }
-
+//npm config set registry http://registry.npmjs.org
 program.parse(process.argv);
