@@ -74,7 +74,7 @@ function createProject(name,type) {
     }
     mkdir(name)
 
-    cp('-R','./projects/'+type+'/*',name)
+    cp('-R','./projects/'+type+'/',name)
     log('复制'+type+'项目原文件成功!')
 
     cd(name)
