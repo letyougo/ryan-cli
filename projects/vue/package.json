@@ -2,7 +2,7 @@
   "name": "vue-test",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "surui1 <surui1@xiaomi.com>",
+
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
