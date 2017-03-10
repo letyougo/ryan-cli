@@ -6,7 +6,7 @@ var express =require('express'),
     jsonfile = require('jsonfile'),
     url = require('url');
 
-function wathch(dbname) {
+function wathch(dbname,port) {
     var app = express()
     var database = jsonfile.readFileSync(dbname)
     app.use(bodyParser.urlencoded({ extended: false }))
@@ -70,7 +70,7 @@ function wathch(dbname) {
         }
         next()
     })
-    app.listen(3000,function () {
+    app.listen(port,function () {
         console.log('server start')
     })
 }

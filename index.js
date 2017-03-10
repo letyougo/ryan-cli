@@ -21,34 +21,21 @@ var createProject = require('./func/create'),
 var projecttype
 program
     .version('0.0.1')
-    .option('-n, --name','my name',function(val){
-        log('我是来自动脑学院的前端老师')
-    })
-    .option('-a --age','my age',function(){
-        log('我26岁了')
-    })
-    .option('-p --position','my position',function(){
-        log('我是个前端工程师')
-    })
-    .option('-s --single','single dog?',function () {
-        log('我可不是一个单身狗哦')
-    })
+
     .option('-r --resume','my total resume',function(){
         log('我是来自动脑学院的前端老师')
         log('我26岁了')
         log('我是个前端工程师')
     })
-
-    .option('-t --type <type>','project type',function(type){
-        projecttype = type
-    })
+    .option('-p, --port <port>','wathch port')
+    .option('-t, --type <type>','project type')
 
 
 program
 
     .command('create <name>')
     .action(function(name){
-
+        var projecttype = program.type
         if(!projecttype){
             log('create project_name -t project_type','jquery','react','vue')
             return
@@ -66,7 +53,7 @@ program
 program
     .command('watch <db>')
     .action(function (dbname) {
-        watchJson(dbname)
+        watchJson(dbname,program.port)
     })
 
 
