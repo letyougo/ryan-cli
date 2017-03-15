@@ -1,6 +1,16 @@
 /**
  * Created by xiaoxiaosu on 17/3/10.
  */
+
+
+var chalk = require('chalk')
+var fs = require('fs');
+var path = require('path');
+
+var log = function (txt) {
+    console.log(chalk.magenta.bold(txt))
+}
+
 function createProject(name,type) {
 
     var p  = process.cwd();

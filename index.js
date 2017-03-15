@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 var program = require('commander')
-var co = require('co');
-var prompt = require('co-prompt');
+
 var chalk = require('chalk')
 var fs = require('fs');
 var path = require('path');
@@ -12,13 +11,10 @@ var log = function (txt) {
     console.log(chalk.magenta.bold(txt))
 }
 
-var createProject = require('./func/create'),
-    watchJson = require('./func/watch');
+var createProject = require('./create'),
+    watchJson = require('./watch');
 
-// log('欢迎使用ryan-cli')
-// log('ryan -r -n -a -p -s查看作者简介')
-// log('ryan create project_name -t project_type 创建项目')
-var projecttype
+
 program
     .version('0.0.1')
 
