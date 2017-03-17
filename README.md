@@ -28,6 +28,7 @@ db.json是一个json文件
 }
 然后 ryan 就给你提供了以下rest服务
 get localhost:5050/user   获取所有用户
+get localhost:5050/user?name=ryan   获取name=ryan的用户
 get localhost:5050/user/1 获取id为1的用户
 post localhost:5050/user  {name:'star',sex:'man'} 提交了一条数据 id自增加
 patch localhost:5050/user/1  {name:'vic')  修改了那条id为1的数据
